@@ -44,33 +44,50 @@ class _ToolConsolePageState extends State<ToolConsolePage> {
         builder: (context, _) {
           return Padding(
             padding: const EdgeInsets.all(16),
-            child: Row(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(
-                  flex: 2,
-                  child: ToolListPane(
-                    tools: controller.tools,
-                    selectedToolId: controller.selectedTool?.id,
-                    query: controller.query,
-                    onQueryChanged: controller.setQuery,
-                    onSelect: controller.selectTool,
-                  ),
+                Text(
+                  'Hello World',
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
-                const SizedBox(width: 16),
-                Expanded(
-                  flex: 3,
-                  child: ToolInspectorPane(
-                    tool: controller.selectedTool,
-                    isRunning: controller.isRunning,
-                    onSubmit: controller.run,
-                  ),
+                const SizedBox(height: 16),
+                TextButton(
+                  onPressed: controller.runProtocolDemo,
+                  child: const Text('Protocol Demo'),
                 ),
-                const SizedBox(width: 16),
+                const SizedBox(height: 16),
                 Expanded(
-                  flex: 3,
-                  child: ToolResultPane(
-                    result: controller.lastResult,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: ToolListPane(
+                          tools: controller.tools,
+                          selectedToolId: controller.selectedTool?.id,
+                          query: controller.query,
+                          onQueryChanged: controller.setQuery,
+                          onSelect: controller.selectTool,
+                        ),
+                      ),
+                      const SizedBox(width: 16),
+                      Expanded(
+                        flex: 3,
+                        child: ToolInspectorPane(
+                          tool: controller.selectedTool,
+                          isRunning: controller.isRunning,
+                          onSubmit: controller.run,
+                        ),
+                      ),
+                      const SizedBox(width: 16),
+                      Expanded(
+                        flex: 3,
+                        child: ToolResultPane(
+                          result: controller.lastResult,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],

@@ -9,5 +9,6 @@ void main() {
 
     expect(find.text('Agent Tool Runtime Playground'), findsOneWidget);
     expect(find.text('Tools'), findsOneWidget);
+    expect(find.text('Hello World'), findsOneWidget);
   });
 }

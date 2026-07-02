@@ -12,7 +12,9 @@ class JsBridgeActionExecutor implements ToolExecutor {
   @override
   Future<ToolResult> execute(
     ToolSpec spec,
-    Map<String, Object?> input,
+    Map<String, Object?> input, {
+    void Function(String stage, Object? payload)? onProgress,
+  }
   ) async {
     final method = spec.config['bridgeMethod'] as String?;
     if (method == null || method.isEmpty) {
@@ -25,8 +27,13 @@ class JsBridgeActionExecutor implements ToolExecutor {
     }
 
     final stopwatch = Stopwatch()..start();
+    onProgress?.call('bridge.requested', {
+      'toolId': spec.id,
+      'method': method,
+    });
     final bridgeResult = await gateway.call(method, input);
     stopwatch.stop();
+    onProgress?.call('bridge.completed', bridgeResult.data);
 
     return ToolResult(
       success: bridgeResult.success,

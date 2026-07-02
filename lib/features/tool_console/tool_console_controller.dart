@@ -1,4 +1,6 @@
 import 'package:flutter/foundation.dart';
+import 'package:learn_agent_flutter/core/protocol/models/protocol_models.dart';
+import 'package:learn_agent_flutter/core/protocol/session/session_orchestrator.dart';
 import 'package:learn_agent_flutter/core/tool_runtime/models/tool_models.dart';
 import 'package:learn_agent_flutter/core/tool_runtime/runtime/tool_runtime.dart';
 
@@ -18,6 +20,7 @@ class ToolConsoleController extends ChangeNotifier {
   late List<ToolSpec> _filteredTools;
   ToolSpec? selectedTool;
   ToolResult? lastResult;
+  List<ProtocolEvent> protocolDemoEvents = const [];
   bool isRunning = false;
   String query = '';
 
@@ -58,6 +61,25 @@ class ToolConsoleController extends ChangeNotifier {
     lastResult = await runtime.invoke(tool.id, input);
 
     isRunning = false;
+    notifyListeners();
+  }
+
+  Future<void> runProtocolDemo() async {
+    protocolDemoEvents = const [];
+    notifyListeners();
+
+    final orchestrator = SessionOrchestrator(runtime: runtime);
+    protocolDemoEvents = await orchestrator.handleRequested(
+      sessionId: 'sess_demo_001',
+      sequenceStart: 1,
+      payload: const ToolCallPayload(
+        callId: 'call_demo_001',
+        toolName: 'app.get_env',
+        arguments: {},
+        idempotencyKey: 'idem_demo_001',
+      ),
+    );
+
     notifyListeners();
   }
 }

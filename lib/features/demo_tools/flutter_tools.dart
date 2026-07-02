@@ -11,6 +11,9 @@ List<ToolSpec> buildFlutterToolSpecs() {
       title: 'Get App Environment',
       description: '返回当前 app 环境与平台信息',
       executorType: ExecutorType.flutterAction,
+      config: {
+        'protocolDemoEnabled': true,
+      },
       inputSchema: [
         ToolInputField(
           name: 'includePlatform',

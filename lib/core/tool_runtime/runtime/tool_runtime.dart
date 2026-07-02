@@ -14,7 +14,9 @@ class ToolRuntime {
 
   Future<ToolResult> invoke(
     String toolId,
-    Map<String, Object?> input,
+    Map<String, Object?> input, {
+    void Function(String stage, Object? payload)? onProgress,
+  }
   ) async {
     final spec = context.registry.findById(toolId);
     if (spec == null) {
@@ -53,10 +55,18 @@ class ToolRuntime {
     late final ToolResult result;
     switch (spec.executorType) {
       case ExecutorType.flutterAction:
-        result = await context.flutterExecutor.execute(spec, input);
+        result = await context.flutterExecutor.execute(
+          spec,
+          input,
+          onProgress: onProgress,
+        );
         break;
       case ExecutorType.jsBridgeAction:
-        result = await context.jsBridgeExecutor.execute(spec, input);
+        result = await context.jsBridgeExecutor.execute(
+          spec,
+          input,
+          onProgress: onProgress,
+        );
         break;
     }
 

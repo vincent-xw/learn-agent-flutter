@@ -15,7 +15,9 @@ class FlutterActionExecutor implements ToolExecutor {
   @override
   Future<ToolResult> execute(
     ToolSpec spec,
-    Map<String, Object?> input,
+    Map<String, Object?> input, {
+    void Function(String stage, Object? payload)? onProgress,
+  }
   ) async {
     final handler = handlers[spec.id];
     if (handler == null) {
@@ -29,8 +31,10 @@ class FlutterActionExecutor implements ToolExecutor {
 
     final stopwatch = Stopwatch()..start();
     try {
+      onProgress?.call('started', {'toolId': spec.id});
       final data = await handler(input);
       stopwatch.stop();
+      onProgress?.call('completed', data);
       return ToolResult(
         success: true,
         data: data,
@@ -42,6 +46,7 @@ class FlutterActionExecutor implements ToolExecutor {
       );
     } catch (error) {
       stopwatch.stop();
+      onProgress?.call('failed', {'error': error.toString()});
       return ToolResult(
         success: false,
         data: null,
