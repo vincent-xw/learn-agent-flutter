@@ -1,0 +1,64 @@
+lib/features/tool_console/tool_console_controller.dart
+  s_eb1e768bd2c541::t_1aa570fb86b59a 2-3,23,66-83
+  s_eb1e768bd2c541::t_51635a3e55eb4f 84
+docs/superpowers/plans/2026-07-02-localagent-flutter-streaming-tool-protocol.md
+  s_eb1e768bd2c541::t_62795bb8083dcd 1-909
+test/core/protocol/session_orchestrator_test.dart
+  s_eb1e768bd2c541::t_e7e6f395520dfe 1-3,5-45
+  s_eb1e768bd2c541::t_cc1e4af87f41c0 4
+lib/features/demo_tools/flutter_tools.dart
+  s_eb1e768bd2c541::t_1aa570fb86b59a 14-16
+test/core/protocol/protocol_event_parser_test.dart
+  s_eb1e768bd2c541::t_92836917376b8b 1-39
+lib/core/protocol/models/protocol_models.dart
+  s_eb1e768bd2c541::t_3debddd4493b52 1-106
+lib/core/protocol/session/session_orchestrator.dart
+  s_eb1e768bd2c541::t_c6081ab80f3502 2-4,6-7,16,18,22-48,51-53,55-70,75-76,78,125-127,129-131,133-134
+  s_eb1e768bd2c541::t_c60d411fe8898b 1,5,8-15,20,49-50,54,71-74,77,79-124,128,132
+  s_eb1e768bd2c541::t_cd6917847bdf01 17,19,21
+test/features/tool_console/tool_console_page_test.dart
+  s_eb1e768bd2c541::t_a289495ab4656c 5,9
+lib/features/tool_console/tool_console_page.dart
+  s_eb1e768bd2c541::t_014b1fdba3670a 47,50-52,54,61-90
+  s_eb1e768bd2c541::t_1aa570fb86b59a 55-57,59
+test/widget_test.dart
+  s_eb1e768bd2c541::t_f8a66ac99b6c26 12
+docs/superpowers/specs/2026-07-02-localagent-flutter-streaming-tool-protocol-design.md
+  s_eb1e768bd2c541::t_73fca27ee534fc 1-401
+lib/core/protocol/session/session_state.dart
+  s_eb1e768bd2c541::t_c6081ab80f3502 1-34
+test/core/protocol/protocol_event_emitter_test.dart
+  s_eb1e768bd2c541::t_412eb28206af08 1-19
+lib/core/tool_runtime/executors/tool_executor.dart
+  s_eb1e768bd2c541::t_965981403df6be 6-8
+lib/core/tool_runtime/executors/flutter_action_executor.dart
+  s_eb1e768bd2c541::t_965981403df6be 18-20,34,37,49
+test/core/tool_runtime/tool_runtime_test.dart
+  s_eb1e768bd2c541::t_412eb28206af08 45-82
+lib/core/protocol/emitter/protocol_event_emitter.dart
+  s_eb1e768bd2c541::t_965981403df6be 1-99
+test/smoke_test.dart
+  s_eb1e768bd2c541::t_f8a66ac99b6c26 11
+lib/core/tool_runtime/executors/js_bridge_action_executor.dart
+  s_eb1e768bd2c541::t_965981403df6be 15-17,30-33,36
+lib/core/protocol/parser/protocol_event_parser.dart
+  s_eb1e768bd2c541::t_3debddd4493b52 1-117
+lib/core/tool_runtime/runtime/tool_runtime.dart
+  s_eb1e768bd2c541::t_965981403df6be 17-19,58-62,65-69
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "490e87ae81a3fa208fdf854e5bde9c03a555b8e1",
+  "prompts": {},
+  "sessions": {
+    "s_eb1e768bd2c541": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f22fe-cf29-79e1-b74f-f69a42997965",
+        "model": "gpt-5.4"
+      },
+      "human_author": "xuewen.jia <xuewen.jia@ly.com>"
+    }
+  }
+}
