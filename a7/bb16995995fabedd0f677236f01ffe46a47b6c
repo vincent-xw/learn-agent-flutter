@@ -1,0 +1,19 @@
+docs/protocols/localagent-flutter-tool-protocol.md
+  s_eb1e768bd2c541::t_f9a5ae46bc87b6 1-286
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "a7bb16995995fabedd0f677236f01ffe46a47b6c",
+  "prompts": {},
+  "sessions": {
+    "s_eb1e768bd2c541": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f22fe-cf29-79e1-b74f-f69a42997965",
+        "model": "gpt-5.4"
+      },
+      "human_author": "xuewen.jia <xuewen.jia@ly.com>"
+    }
+  }
+}
