@@ -1,0 +1,21 @@
+ios/Podfile
+  s_8723d69b2947d7::t_8590e8c09ffdee 1-43
+macos/Podfile
+  s_8723d69b2947d7::t_87a2e7a49521bd 1-42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "0cb89075bc9033a7ce71080eee3dbe4f780755bc",
+  "prompts": {},
+  "sessions": {
+    "s_8723d69b2947d7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ca50bf8b-7a7f-4fc6-bcf4-1a5e041c3c9c",
+        "model": "auto"
+      },
+      "human_author": "xuewen.jia <xuewen.jia@ly.com>"
+    }
+  }
+}
